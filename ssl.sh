@@ -5,4 +5,4 @@ docker compose up certbot
 
 echo 'all done, restart nginx'
 
-docker compose up nginx -d
+# docker compose up nginx -d

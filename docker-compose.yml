@@ -1,0 +1,24 @@
+version: '3.4'
+services:
+  nginx:
+    image: nginx:stable-alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      # - ./public_html:/public_html
+      - ./conf.d:/etc/nginx/conf.d/
+      # - ./dhparam:/etc/nginx/dhparam
+      - ./certbot/conf/:/etc/nginx/ssl/
+      - ./certbot/data:/usr/share/nginx/html/letsencrypt
+
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email test@g.com --agree-tos --no-eff-email --dry-run -d testmess27.ml
+    volumes:
+      - ./certbot/conf/:/etc/letsencrypt
+      - ./certbot/logs/:/var/log/letsencrypt #optional
+      - ./certbot/data:/usr/share/nginx/html/letsencrypt
+
+#  -d api.testmess27.ml

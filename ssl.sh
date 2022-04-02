@@ -1,7 +1,8 @@
 git checkout nossl
 docker compose up nginx -d
 git checkout master
-docker compose up certbot -d
-docker compose up nginx -d
+docker compose up certbot
 
-echo 'all done'
+echo 'all done, restart nginx'
+
+docker compose up nginx -d

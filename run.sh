@@ -13,7 +13,8 @@ do
   echo "3 second later res = $VARI"
 done
 
-echo "loop done,go next"
+echo "loop done, get the ssl"
 docker compose up certbot
 # echo 'all done, restart nginx'
-docker compose up nginx -d
+# docker compose up nginx -d
+docker compose up --scale certbot=0 -d

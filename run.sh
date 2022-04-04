@@ -9,7 +9,7 @@ echo "response = $VARI"
 
 until [ $VARI == "200" ]
 do
-  sleep 2
+  sleep 5
   echo "response = $VARI"
 done
 

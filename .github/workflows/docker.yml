@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: pull the iamges(if required) & run using run.sh script
-      run: bash init.sh
+      run: bash run.sh
       # run: bash init.sh
       # run: |
       #   docker compose pull

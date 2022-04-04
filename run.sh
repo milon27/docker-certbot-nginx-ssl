@@ -5,6 +5,8 @@ docker compose -f docker-compose.dev.yml up -d
 
 VARI=$(curl -sL -w "%{http_code}\n" "http://testmess27.ml/" -o /dev/null)
 
+echo "response = $VARI"
+
 until [ $VARI == "200" ]
 do
   sleep 2
@@ -12,6 +14,6 @@ do
 done
 
 echo "loop done,go next"
-docker compose up certbot
-echo 'all done, restart nginx'
-docker compose up nginx -d
+# docker compose up certbot
+# echo 'all done, restart nginx'
+# docker compose up nginx -d

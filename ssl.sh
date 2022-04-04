@@ -2,7 +2,7 @@ git checkout nossl
 docker compose up nginx -d
 read -p "If site is live, Press enter to continue"
 
-# until $(curl --output /dev/null --silent --head --fail http://testmess27.ml/); do
+# until $(curl --output /dev/null --silent --head --fail http://m27lab.ml/); do
 #   printf 'waiting...'
 #   sleep 5
 # done

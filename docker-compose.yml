@@ -13,12 +13,13 @@ services:
       - ./certbot/conf/:/etc/nginx/ssl/
       - ./certbot/data:/usr/share/nginx/html/letsencrypt
 
+  # --force-renewal or --staging
   certbot:
     image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --force-renewal  --agree-tos --no-eff-email --email test@g.com -d testmess27.ml
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --staging  --agree-tos --no-eff-email --email test@g.com -d m27lab.ml
     volumes:
       - ./certbot/conf/:/etc/letsencrypt
       - ./certbot/logs/:/var/log/letsencrypt #optional
       - ./certbot/data:/usr/share/nginx/html/letsencrypt
 
-#  -d api.testmess27.ml
+#  -d api.m27lab.ml

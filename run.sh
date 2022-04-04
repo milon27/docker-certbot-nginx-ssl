@@ -1,11 +1,11 @@
 #!/bin/bash
 docker compose -f docker-compose.dev.yml up -d
 # read -p "If site is live, Press enter to continue"
-# curl -sL -w "%{http_code}\n" "http://testmess27.ml/" -o /dev/null output is 200
+# curl -sL -w "%{http_code}\n" "http://m27lab.ml/" -o /dev/null output is 200
 
 sleep 7
 
-VARI=$(curl -sL -w "%{http_code}\n" "http://testmess27.ml/" -o /dev/null)
+VARI=$(curl -sL -w "%{http_code}\n" "http://m27lab.ml/" -o /dev/null)
 
 echo "response = $VARI"
 

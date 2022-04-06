@@ -10,5 +10,5 @@ services:
       # - ./public_html:/public_html
       - ./conf.d/dev:/etc/nginx/conf.d/
       - ./dhparam:/etc/nginx/dhparam
-      - ~/ssl/certbot/conf/:/etc/nginx/ssl/
-      - ~/ssl/certbot/data:/usr/share/nginx/html/letsencrypt
+      - ./_tmp_volume/certbot/conf/:/etc/nginx/ssl/
+      - ./_tmp_volume/certbot/data:/usr/share/nginx/html/letsencrypt

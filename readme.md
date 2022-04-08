@@ -88,9 +88,6 @@ jobs:
 
 
 
-
-
-
 #### some other things
 
 generate open ssl and put in the dhparam folder
@@ -102,9 +99,11 @@ openssl dhparam  -out ./dhparam-2048.pem 2048
 
 renew in crontab
 ```
- docker compose run --rm certbot renew
+  docker compose run --rm certbot renew
+
  or
 
- crontab -e
- 0 5 1 */2 *  /usr/local/bin/docker-compose up -f /var/docker/docker-compose.yml certbot
+  crontab -e (run as current user)
+  * * * * * docker compose run --rm -f ~/actions-runner/_work/YOUR_GIT_REPO/YOUR_GIT_REPO/docker-compose.yml certbot renew
+
 ```
